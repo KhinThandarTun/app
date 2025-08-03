@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-  <h1>{{$store.state.Todos.sayHello}}</h1>   
+  <TodoLists />  
   </div>
 </template>
 
 <script>
+
+import TodoLists from './components/TodoLists.vue';
+
 export default {
   name: 'App',
   components: {
+    TodoLists
   },
-  mounted(){
-    console.log(this.$store.state.Todos.sayHello);
-  }
 }
 </script>
-
 <style>
 </style>
