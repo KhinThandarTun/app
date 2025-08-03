@@ -1,25 +1,24 @@
 <template>
-  <div>
-    <div>
-  <b-input-group
-    v-for="size in ['sm','','lg']"
-    :key="size"
-    :size="size"
-    class="mb-3"
-    prepend="Label"
-  >
-    <b-form-input></b-form-input>
-    <b-input-group-append>
-      <b-button size="sm" text="Button" variant="success">Button</b-button>
-    </b-input-group-append>
-  </b-input-group>
+ <div class="input-group mb-3">
+  <input type="text" class="form-control" v-model="newTodo.title">
+  <button class="btn btn-primary" @click="addTodo(newTodo)">
+    add todo
+  </button>
 </div>
-  </div>
 </template>
 
 <script>
-export default {
+import { mapActions } from 'vuex';
 
+export default {
+    data(){
+        return{
+            newTodo:{
+                title:""
+            }
+        }
+    },
+    methods: mapActions(["addTodo"]),
 }
 </script>
 
